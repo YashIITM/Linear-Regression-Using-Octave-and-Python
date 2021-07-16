@@ -38,8 +38,10 @@ function theta = linreg (filename,number_of_data_points)
   theta = (inverse(data_X'*data_X))*data_X'*data_y; 
   
   % Plot the fitted equation we got from the regression
+  figure(m)
   plot(data_X(:,2), data_X*theta,'-')
-  title('Linear regression using Normal Equation:')
+  str = sprintf('Linear regression using Normal Equation:%d Data Points',m);
+  title(str)
   hold on; % this keeps our previous plot of the data visible
   plotdata(data_x,data_y)
   xlabel('X') % Set the x-label
